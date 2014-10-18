@@ -1,0 +1,23 @@
+{
+  "name": "lightboard-amqp",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test/"
+  },
+  "dependencies": {
+    "amqplib": "^0.2.1",
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {
+    "async": "^0.9.0",
+    "mocha": "^1.21.4",
+    "chai": "^1.9.2"
+  },
+  "author": "dmf",
+  "license": "ISC"
+}
