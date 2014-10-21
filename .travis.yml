@@ -13,3 +13,5 @@ cache:
   directories:
   - node_modules
 
+notifications:
+  slack: selfemployed:SKnGMOsSj9J2XP7fQe0IZkRq
