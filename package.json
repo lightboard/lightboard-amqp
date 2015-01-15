@@ -1,8 +1,7 @@
 {
   "name": "lightboard-amqp",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
-  "private": true,
   "main": "lib/index.js",
   "directories": {
     "test": "test"
@@ -19,6 +18,6 @@
     "mocha": "^1.21.4",
     "chai": "^1.9.2"
   },
-  "author": "dmf",
+  "author": "davidmfoley@gmail.com",
   "license": "ISC"
 }
