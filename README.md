@@ -22,7 +22,7 @@ All messages are acked _before_ handlers are invoked.
 ### examples
 
 #### publish/subscribe
-```
+```javascript
 
   var amqp = require('lightboard-amqp');
 
@@ -41,7 +41,7 @@ All messages are acked _before_ handlers are invoked.
 ```
 
 #### workers - round robin
-```
+```javascript
   var amqp = require('lightboard-amqp');
 
   amqp.initWithChannel('amqp://localhost', function(err, channel) {
@@ -68,7 +68,7 @@ All messages are acked _before_ handlers are invoked.
 ```
 
 #### Remote procedue call (RPC)
-```
+```javascript
   var amqp = require('lightboard-amqp');
 
   amqp.initWithChannel('amqp://localhost', function(err, channel) {
