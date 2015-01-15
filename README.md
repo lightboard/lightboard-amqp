@@ -13,6 +13,11 @@ Each message is consumed by one server, which sends the response back to the cli
 
 Depends on amqplib.
 
+### Notes
+
+All messages are acked _before_ handlers are invoked.
+
+
 
 ### examples
 
@@ -58,6 +63,36 @@ Depends on amqplib.
         channel.publish('sandwich', {type: 'vegan'});
       });
     });
+  });
+
+```
+
+#### Remote procedue call (RPC)
+```
+  var amqp = require('lightboard-amqp');
+
+  amqp.initWithChannel('amqp://localhost', function(err, channel) {
+
+    function deepThought(message, cb) {
+      if (message.data.question === '6 * 9') {
+        cb(null, {answer: 42});
+      }
+      else {
+        cb(new Error("Ask me again later"));
+      }
+    });
+
+    rpc.server('answers', 'question.ask', deepThought, function(err) {
+      // ... handle err if set ...
+      rpc.client(function(err, client) {
+        // ... handle err if set ...
+        client.request('question.ask', {question: '6 * 9'}, function(err, response) {
+          console.log(response.answer);
+          // -> 42
+        });
+      });
+    });
+
   });
 
 ```
